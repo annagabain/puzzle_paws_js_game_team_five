@@ -1,29 +1,3 @@
-//  init()                      P1   starts the page
-//    loadBest()                P2
-//    startGame()               P1
-//
-//  startGame()                 P1   new game (also the Restart button)
-//    createDeck(), shuffle()   P1
-//    stopTimer()               P2
-//    renderCards(), updateBest()      P4
-//
-//  handleCardClick(cardEl)     P3   the player clicks a card
-//    flipBackWrongCards()      P3   (only when 2 wrong cards are still open)
-//    startTimer()              P2   (first click only)
-//    refreshCard()             P4
-//    checkPairs()              P1   (when 2 cards are open)
-//
-//  checkPairs()                P1   two cards are open: same or different?
-//    refreshCard(), updateMoves()      P4
-//    flipBackWrongCards()      P3
-//    finishGame()              P2   (when every card is gone)
-//
-//  finishGame()                P2   the player won
-//    stopTimer(), handleNewRecord()    P2
-//
-//  renderCards(cards)          P4   draws the board
-//    createCard() > updateCardElement()   P4
-
 const CARD_NAMES = [
   "bear",
   "elephant",
