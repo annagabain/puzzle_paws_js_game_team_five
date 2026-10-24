@@ -1,0 +1,272 @@
+/* colours and shared stuff */
+
+:root {
+    --bg: #f4edf2;
+    --card: #ececec;
+    --white: #ffffff;
+
+    --pink: #f58cc6;
+    --pink-dark: #ea72b8;
+    --pink-light: #ffdcef;
+
+    --text: #1f1f1f;
+    --border: #ef9fd1;
+
+    --radius: 14px;
+
+    --shadow:
+        0 3px 8px rgba(0, 0, 0, 0.12);
+
+    --speed: 0.25s;
+}
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* main wrapper */
+
+.app {
+    min-height: 100vh;
+}
+
+
+/* top area */
+.game-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.logo-area img {
+    width: 220px;
+    display: block;
+}
+
+
+/* player greeting */
+.player-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+
+
+
+/* moves and timer */
+
+.game-stats {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.stat-box {
+    min-width: 120px;
+
+    padding: 0.85rem;
+
+    text-align: center;
+
+    border: 2px solid var(--border);
+    border-radius: 10px;
+}
+
+.stat-box h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.stat-box span {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+
+
+/* board area */
+
+.game-board {
+    display: flex;
+    justify-content: center;
+
+    padding: 2rem 1rem;
+}
+
+
+/* CARDS */
+
+/* card grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 1.25rem;
+}
+
+
+/* each card */
+.card {
+    width: 120px;
+    height: 120px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+
+/* flip container */
+.card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+/* card gets flipped by js */
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* front and back */
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius);
+
+    background: var(--card);
+    box-shadow: var(--shadow);
+
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    transform: rotateY(0deg);
+}
+
+/* images inside cards */
+
+.card img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/* matched cards */
+
+.card.matched {
+    pointer-events: none;
+}
+
+.card.matched .card-front {
+    background: var(--white);
+}
+
+/* restart area */
+.actions {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+
+
+/* restart btn */
+
+.btn-restart {
+    border: none;
+
+    padding: 0.9rem 2.5rem;
+
+    border-radius: 12px;
+
+    background: var(--pink);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow);
+    transition: var(--speed);
+}
+
+.btn-restart:hover {
+    background: var(--pink-dark);
+}
+
+.btn-restart:active {
+    transform: scale(0.97);
+}
+
+
+
+
+/* RESPONSIVITY */
+
+
+/* small screens */
+
+@media (max-width: 768px) {
+
+    .game-header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .game-stats {
+        justify-content: center;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(4, 80px);
+        gap: 0.75rem;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo-area img {
+        margin: 0 auto;
+    }
+
+    .player-name {
+        font-size: 1rem;
+    }
+}
