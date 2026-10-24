@@ -1,16 +1,22 @@
 /* colours and shared stuff */
 
 :root {
-    --bg: #f4edf2;
-    --card: #ececec;
-    --white: #ffffff;
+    --bg: #FFF7FC; 
+    --bg-small-pages: #FFEFF8;      /* small spages background color */
+
+    --bg-card: #F3F3F3;             /* cards colour*/
+    --bg-card-hover: #F8F8F8;       /* cards hovered colour*/
+    --bg-card-matched: #C3E8C9;     /* cards matched colour*/
+
+    --color-border: #ef9fd1;            /* border colour*/
+    --color-button: #FF99CF;              /* button color*/
+    --color-button-pressed: #FF70BC;      /* button pressed color*/
+
+    --text-color:  #1f1f1f;
 
     --pink: #f58cc6;
     --pink-dark: #ea72b8;
     --pink-light: #ffdcef;
-
-    --text: #1f1f1f;
-    --border: #ef9fd1;
 
     --radius: 14px;
 
@@ -19,6 +25,7 @@
 
     --speed: 0.25s;
 }
+
 
 /* reset */
 
