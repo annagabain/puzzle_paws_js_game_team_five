@@ -1,18 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory game</title>
+    <title>Miau Memory Game</title>
     <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="app">
-      <header class="game-header">
-        <div class="logo-area">
-          <img src="./assets/logo.svg" alt="Paws Memory Game" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="game-header">
+
+        <div class="game-info">
+            <div class="game-brand">
+                <img src="images/paw.svg" alt="Paw logo">
+                <h1>Miau Memory Game</h1>
+            </div>
+
+            <p>Find the pairs of cards with the same image.</p>
         </div>
-      </header>
-    </div>
-  </body>
+
+        <div class="player-info">
+            <h2>Hello, <span id="player-name">Ana</span></h2>
+        </div>
+
+        <div class="game-stats">
+            <div class="best-result">
+                <h3>Best result</h3>
+                <p id="best-score">20</p>
+            </div>
+
+            <div class="timer">
+                <h3>Time</h3>
+                <p id="time">0:00</p>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="game-container">
+
+        <section class="game-board" aria-label="Memory card game">
+
+            <button class="card" type="button" aria-label="Card 1"></button>
+            <button class="card" type="button" aria-label="Card 2"></button>
+            <button class="card" type="button" aria-label="Card 3"></button>
+            <button class="card" type="button" aria-label="Card 4"></button>
+
+            <button class="card" type="button" aria-label="Card 5"></button>
+            <button class="card" type="button" aria-label="Card 6"></button>
+            <button class="card" type="button" aria-label="Card 7"></button>
+            <button class="card" type="button" aria-label="Card 8"></button>
+
+            <button class="card" type="button" aria-label="Card 9"></button>
+            <button class="card" type="button" aria-label="Card 10"></button>
+            <button class="card" type="button" aria-label="Card 11"></button>
+            <button class="card" type="button" aria-label="Card 12"></button>
+
+            <button class="card" type="button" aria-label="Card 13"></button>
+            <button class="card" type="button" aria-label="Card 14"></button>
+            <button class="card" type="button" aria-label="Card 15"></button>
+            <button class="card" type="button" aria-label="Card 16"></button>
+
+        </section>
+
+        <div class="game-controls">
+            <button id="restart-button" type="button">
+                Restart
+            </button>
+        </div>
+
+    </main>
+
+</body>
 </html>
