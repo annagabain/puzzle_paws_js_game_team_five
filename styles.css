@@ -1,21 +1,26 @@
-/* colours and shared stuff */
-
 :root {
-    --bg: #FFF7FC; 
-    --bg-small-pages: #FFEFF8;      /* small spages background color */
+  --bg: #fff7fc;
+  --bg-modal: #ffeff8;
 
-    --bg-card: #F3F3F3;             /* cards colour*/
-    --bg-card-hover: #F8F8F8;       /* cards hovered colour*/
-    --bg-card-matched: #C3E8C9;     /* cards matched colour*/
+  --bg-card: #f3f3f3;
+  --bg-card-hover: #f8f8f8;
+  --bg-card-matched: #c3e8c9;
 
-    --color-border: #ef9fd1;            /* border colour*/
-    --color-button: #FF99CF;              /* button color*/
-    --color-button-pressed: #ff70bc;
+  --color-border: #ef9fd1;
+  --color-button: #ff99cf;
+  --color-button-pressed: #ff70bc;
 
   --text-color: #1f1f1f;
 }
 
-/* Montserrat — 400 Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/Inter/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
@@ -24,7 +29,6 @@
   font-display: swap;
 }
 
-/* Montserrat — 500 Medium */
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
@@ -33,7 +37,6 @@
   font-display: swap;
 }
 
-/* Montserrat — 600 SemiBold */
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
@@ -42,7 +45,6 @@
   font-display: swap;
 }
 
-/* Montserrat — 700 Bold */
 @font-face {
   font-family: "Montserrat";
   src: url("assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
@@ -52,250 +54,247 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    background: var(--bg);
-    color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
-
-/* main wrapper */
 
 .app {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
-
-/* top area */
+.container {
+  max-width: 1220px;
+  width: 100%;
+  margin: auto;
+}
 .game-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-
-    padding: 2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.game-header .container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 30px;
 }
 
-
-.logo-area img {
-    width: 220px;
-    display: block;
+.game-brand {
+  width: 200px;
+  display: block;
 }
 
-
-/* player greeting */
-.player-name {
-    font-size: 1.1rem;
-    font-weight: 500;
+.game-brand img {
+  width: 100%;
 }
 
-
-
-
-
-/* moves and timer */
+.player-info {
+  font-size: 20px;
+  font-weight: 500;
+}
 
 .game-stats {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 .stat-box {
-    min-width: 120px;
-
-    padding: 0.85rem;
-
-    text-align: center;
-
-    border: 2px solid var(--border);
-    border-radius: 10px;
+  display: flex;
+  width: 130px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid var(--color-border);
+  background: var(--bg-modal);
+  gap: 10px;
 }
 
-.stat-box h3 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
+.stat-box div {
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.stat-box span {
-    font-size: 1.7rem;
-    font-weight: 600;
+.stat-box p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  font-style: "Inter", sans-serif;
 }
-
-
 
 /* board area */
 
 .game-board {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    padding: 2rem 1rem;
+  padding: 2rem 1rem;
 }
-
 
 /* CARDS */
 
 /* card grid */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 120px);
-    gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 1.25rem;
 }
-
 
 /* each card */
 .card {
-    width: 120px;
-    height: 120px;
+  width: 120px;
+  height: 120px;
 
-    border: none;
-    background: transparent;
+  border: none;
+  background: transparent;
 
-    cursor: pointer;
-    perspective: 1000px;
+  cursor: pointer;
+  perspective: 1000px;
 }
-
 
 /* flip container */
 .card-inner {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
 
 /* card gets flipped by js */
 .card.flipped .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* front and back */
 
 .card-front,
 .card-back {
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: var(--radius);
+  border-radius: var(--radius);
 
-    background: var(--card);
-    box-shadow: var(--shadow);
+  background: var(--card);
+  box-shadow: var(--shadow);
 
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card-front {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-back {
-    transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 /* images inside cards */
 
 .card img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
 }
 
 /* matched cards */
 
 .card.matched {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .card.matched .card-front {
-    background: var(--white);
+  background: var(--white);
 }
 
 /* restart area */
 .actions {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
 }
-
-
 
 /* restart btn */
 
 .btn-restart {
-    border: none;
+  border: none;
 
-    padding: 0.9rem 2.5rem;
+  padding: 0.9rem 2.5rem;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    background: var(--pink);
-    color: white;
+  background: var(--pink);
+  color: white;
 
-    font-size: 1rem;
-    font-weight: 600;
+  font-size: 1rem;
+  font-weight: 600;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    box-shadow: var(--shadow);
-    transition: var(--speed);
+  box-shadow: var(--shadow);
+  transition: var(--speed);
 }
 
 .btn-restart:hover {
-    background: var(--pink-dark);
+  background: var(--pink-dark);
 }
 
 .btn-restart:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 
+@media (max-width: 1032px) {
+  .player-info {
+    display: none;
+  }
 
+  .game-header .container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
 
+  .cards-grid {
+    grid-template-columns: repeat(4, 80px);
+    gap: 0.75rem;
+  }
 
-/* RESPONSIVITY */
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+}
 
+@media (max-width: 600px) {
+  .game-header {
+    border: none;
+  }
 
-/* small screens */
+  .game-header .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
 
-@media (max-width: 768px) {
+  .game-brand {
+    width: 270px;
+    justify-self: center;
+  }
 
-    .game-header {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .game-stats {
-        justify-content: center;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(4, 80px);
-        gap: 0.75rem;
-    }
-
-    .card {
-        width: 80px;
-        height: 80px;
-    }
-
-    .logo-area img {
-        margin: 0 auto;
-    }
-
-    .player-name {
-        font-size: 1rem;
-    }
+  .game-stats {
+    justify-self: center;
+  }
 }
