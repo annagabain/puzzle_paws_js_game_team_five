@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-
   <body class="app">
     <header class="game-header">
       <div class="container">
@@ -30,32 +29,143 @@
         </div>
       </div>
     </header>
-
     <main class="game-container">
-      <section class="game-board" aria-label="Memory card game">
-        <button class="card" type="button" aria-label="Card 1"></button>
-        <button class="card" type="button" aria-label="Card 2"></button>
-        <button class="card" type="button" aria-label="Card 3"></button>
-        <button class="card" type="button" aria-label="Card 4"></button>
+      <section class="game-board" aria-label="Memory card game" id="board">
+        <button class="card flipped" aria-label="Card 1">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 2">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/fox.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 3">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/leo.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 4">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-        <button class="card" type="button" aria-label="Card 5"></button>
-        <button class="card" type="button" aria-label="Card 6"></button>
-        <button class="card" type="button" aria-label="Card 7"></button>
-        <button class="card" type="button" aria-label="Card 8"></button>
+        <button class="card" type="button" aria-label="Card 5">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card hidden" type="button" aria-label="Card 6">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 7">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 8">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-        <button class="card" type="button" aria-label="Card 9"></button>
-        <button class="card" type="button" aria-label="Card 10"></button>
-        <button class="card" type="button" aria-label="Card 11"></button>
-        <button class="card" type="button" aria-label="Card 12"></button>
+        <button class="card correct" type="button" aria-label="Card 9">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card correct" type="button" aria-label="Card 10">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 11">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 12">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-        <button class="card" type="button" aria-label="Card 13"></button>
-        <button class="card" type="button" aria-label="Card 14"></button>
-        <button class="card" type="button" aria-label="Card 15"></button>
-        <button class="card" type="button" aria-label="Card 16"></button>
+        <button class="card flipped" type="button" aria-label="Card 13">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 14">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 15">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 16">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
       </section>
 
       <div class="game-controls">
-        <button id="restart-button" type="button">Restart</button>
+        <button id="restart-button" type="button" class="btn">Restart</button>
       </div>
     </main>
   </body>
