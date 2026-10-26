@@ -168,5 +168,67 @@
         <button id="restart-button" type="button" class="btn">Restart</button>
       </div>
     </main>
+    <div class="modal-overlay hidden">
+      <div id="modal-div">
+        <a id="close-btn" href="#"
+          ><img src="assets/icons/close_circle.svg"
+        /></a>
+        <div id="modal-header">
+          <img id="modal-header-logo" src="assets/paw-signin.svg" />
+          <p id="modal-header-p">
+            Find the pairs of cards with the same image.
+          </p>
+        </div>
+
+        <div>
+          <form id="modal-form">
+            <div id="label-icon">
+              <label id="label-name">Enter your name:</label>
+              <a href="#"
+                ><img src="assets/icons/question-mark-circle.svg"
+              /></a>
+            </div>
+            <input />
+          </form>
+
+          <button class="btn">Play!</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay hidden">
+      <div id="modal-div">
+        <a id="close-btn" href="#"
+          ><img src="assets/icons/close_circle.svg"
+        /></a>
+        <div id="modal-header">
+          <img id="modal-header-logo" src="assets/paw-signin.svg" />
+          <p id="modal-header-p">Congratulations! You matched all the cards</p>
+          <p id="modal-sub-p">Good work, Ana</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div id="modal-stats">
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">MOVES</span>
+            <span class="stat-value">24</span>
+          </div>
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">CURRENT TIME</span>
+            <span class="stat-value">0:47</span>
+          </div>
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">BEST TIME</span>
+            <span class="stat-value">0:20</span>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn">Play again</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

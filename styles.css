@@ -159,7 +159,7 @@ body {
   transform: rotateY(180deg);
 }
 
-.card.hidden {
+.hidden {
   visibility: hidden;
 }
 
@@ -283,4 +283,104 @@ body {
   .card-back {
     background-size: 52px 40px;
   }
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+#modal-div {
+  background-color: var(--bg-modal);
+  width: 90%;
+  height: auto;
+  max-width: 600px;
+  padding: 35px 25px;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: "Montserrat", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+#close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+}
+
+#modal-header-logo {
+  width: 418px;
+  height: auto;
+  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+#modal-header-p {
+  color: var(--text-color);
+  margin-top: 0;
+  font-size: 13px;
+  margin-bottom: 100px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#label-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  max-width: 260px;
+  margin-bottom: 6px;
+  margin-top: -20px;
+}
+
+#label-name {
+  color: var(--text-color);
+  font-size: 13px;
+  width: 100%;
+  gap: 2px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#modal-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modal-form input {
+  width: 100%;
+  max-width: 260px;
+  padding: 10px 12px;
+  border: 1.5px solid #ffc0cb;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+}
+
+#modal-form {
+  border-color: var(--color-border);
+}
+
+.modal-overlay .btn {
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
