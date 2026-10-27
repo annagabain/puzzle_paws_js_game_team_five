@@ -294,7 +294,8 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.65);
 
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 
@@ -317,7 +318,7 @@ body {
   display: flex;
 }
 
-#close-btn {
+.close-btn {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -383,4 +384,9 @@ body {
 .modal-overlay .btn {
   margin-top: 60px;
   margin-bottom: 40px;
+}
+
+
+.open-modal {
+  display: flex;
 }
