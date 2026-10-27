@@ -1,40 +1,43 @@
 const CARD_NAMES = [
   "bear",
-  "elephant",
+  "dog",
   "fox",
-  "zebra",
-  "lion",
-  "penguin",
-  "rabbit",
-  "turtle",
-]; // temporary img
-const IMAGE_PATH = "temp-images";
-const FLIP_BACK_DELAY_MS = 600; // a wrong pair stays open this long
-const CORRECT_DELAY_MS = 1000; // a right pair is highlighted this long, then hidden
+  "leo",
+  "monkey",
+  "redpanda",
+  "sloth",
+  "squirrel",
+];
+
+const IMAGE_PATH = "assets/animals";
+const FLIP_BACK_DELAY_MS = 600;
+const CORRECT_DELAY_MS = 1000;
 const STORAGE_KEY = "memoryBest";
+const PLAYER_KEY = "memoryPlayerName";
 
 const gameState = {
-  cards: [], // all 16 card objects (shuffled)
-  flippedCards: [], // the 0-2 open cards of this turn
+  cards: [],
+  flippedCards: [],
   matchedPairs: 0,
   moves: 0,
-  time: 0, // seconds
-  startTime: null, // Date.now() of the first click (null = not started)
-  timerId: null, // id of the stopwatch (setInterval)
-  flipBackTimeoutId: null, // id of the wait before a wrong pair flips back
-  hideTimeoutIds: [], // ids of the waits before right pairs are hidden
+  time: 0,
+  startTime: null,
+  timerId: null,
+  flipBackTimeoutId: null,
+  hideTimeoutIds: [],
 };
 
 const bestRecords = {
   moves: null,
-  time: null, // records, loaded from localStorage
+  time: null,
 };
 
+let playerName = "";
+
 const board = document.getElementById("board");
-const successBlock = document.getElementById("success");
-const restartButton = document.getElementById("restart-button");
 const movesEl = document.getElementById("moves");
 const timeEl = document.getElementById("time");
+
 const bestMovesEl = document.getElementById("best-moves");
 const bestTimeEl = document.getElementById("best-time");
 
@@ -171,7 +174,7 @@ function updateBest() {
 function finishGame() {
   // 1. stopTimer()                         stop the stopwatch FIRST
   // 2. gameState.time = whole seconds from startTime until now
-  // 3. show the success block: successBlock.classList.remove("hidden")
+  // 3. show the success modal: successModal.classList.remove("hidden")
 }
 
 function init() {

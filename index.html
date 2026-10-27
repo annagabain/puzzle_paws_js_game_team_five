@@ -1,78 +1,234 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miau Memory Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paws Memory Game</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-
-<body>
-
+  </head>
+  <body class="app">
     <header class="game-header">
-
-        <div class="game-info">
-            <div class="game-brand">
-                <img src="images/paw.svg" alt="Paw logo">
-                <h1>Miau Memory Game</h1>
-            </div>
-
-            <p>Find the pairs of cards with the same image.</p>
+      <div class="container">
+        <div class="game-brand">
+          <img src="assets/logo.svg" alt="Paw logo" />
         </div>
 
-        <div class="player-info">
-            <h2>Hello, <span id="player-name">Ana</span></h2>
-        </div>
+        <div class="player-info">Hello, <span id="player-name">Anna</span></div>
 
         <div class="game-stats">
-            <div class="best-result">
-                <h3>Best result</h3>
-                <p id="best-score">20</p>
-            </div>
+          <div class="stat-box">
+            <div>Moves</div>
+            <p id="moves">20</p>
+          </div>
 
-            <div class="timer">
-                <h3>Time</h3>
-                <p id="time">0:00</p>
-            </div>
+          <div class="timer stat-box">
+            <div>Time</div>
+            <p id="time">0:00</p>
+          </div>
         </div>
-
+      </div>
     </header>
-
     <main class="game-container">
+      <section class="game-board" aria-label="Memory card game" id="board">
+        <button class="card flipped" aria-label="Card 1">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 2">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/fox.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 3">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/leo.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 4">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-        <section class="game-board" aria-label="Memory card game">
+        <button class="card" type="button" aria-label="Card 5">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card hidden" type="button" aria-label="Card 6">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 7">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 8">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-            <button class="card" type="button" aria-label="Card 1"></button>
-            <button class="card" type="button" aria-label="Card 2"></button>
-            <button class="card" type="button" aria-label="Card 3"></button>
-            <button class="card" type="button" aria-label="Card 4"></button>
+        <button class="card correct" type="button" aria-label="Card 9">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card correct" type="button" aria-label="Card 10">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 11">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card" type="button" aria-label="Card 12">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
 
-            <button class="card" type="button" aria-label="Card 5"></button>
-            <button class="card" type="button" aria-label="Card 6"></button>
-            <button class="card" type="button" aria-label="Card 7"></button>
-            <button class="card" type="button" aria-label="Card 8"></button>
+        <button class="card flipped" type="button" aria-label="Card 13">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 14">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 15">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+        <button class="card flipped" type="button" aria-label="Card 16">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="assets/animals/bear.svg" />
+            </div>
+            <div class="card-back"></div>
+          </div>
+        </button>
+      </section>
 
-            <button class="card" type="button" aria-label="Card 9"></button>
-            <button class="card" type="button" aria-label="Card 10"></button>
-            <button class="card" type="button" aria-label="Card 11"></button>
-            <button class="card" type="button" aria-label="Card 12"></button>
-
-            <button class="card" type="button" aria-label="Card 13"></button>
-            <button class="card" type="button" aria-label="Card 14"></button>
-            <button class="card" type="button" aria-label="Card 15"></button>
-            <button class="card" type="button" aria-label="Card 16"></button>
-
-        </section>
-
-        <div class="game-controls">
-            <button id="restart-button" type="button">
-                Restart
-            </button>
+      <div class="game-controls">
+        <button id="restart-button" type="button" class="btn">Restart</button>
+      </div>
+    </main>
+    <div class="modal-overlay hidden">
+      <div id="modal-div">
+        <a id="close-btn" href="#"
+          ><img src="assets/icons/close_circle.svg"
+        /></a>
+        <div id="modal-header">
+          <img id="modal-header-logo" src="assets/paw-signin.svg" />
+          <p id="modal-header-p">
+            Find the pairs of cards with the same image.
+          </p>
         </div>
 
-    </main>
+        <div>
+          <form id="modal-form">
+            <div id="label-icon">
+              <label id="label-name">Enter your name:</label>
+              <a href="#"
+                ><img src="assets/icons/question-mark-circle.svg"
+              /></a>
+            </div>
+            <input />
+          </form>
 
-</body>
+          <button class="btn">Play!</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay hidden">
+      <div id="modal-div">
+        <a id="close-btn" href="#"
+          ><img src="assets/icons/close_circle.svg"
+        /></a>
+        <div id="modal-header">
+          <img id="modal-header-logo" src="assets/paw-signin.svg" />
+          <p id="modal-header-p">Congratulations! You matched all the cards</p>
+          <p id="modal-sub-p">Good work, Ana</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div id="modal-stats">
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">MOVES</span>
+            <span class="stat-value">24</span>
+          </div>
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">CURRENT TIME</span>
+            <span class="stat-value">0:47</span>
+          </div>
+          <div class="stat-card">
+            <img class="stat-icon" src="assets/icons/paw-icon.svg" alt="paw" />
+            <span class="stat-title">BEST TIME</span>
+            <span class="stat-value">0:20</span>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn">Play again</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

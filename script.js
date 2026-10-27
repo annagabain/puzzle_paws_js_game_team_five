@@ -1,18 +1,19 @@
 const CARD_NAMES = [
   "bear",
-  "elephant",
+  "dog",
   "fox",
-  "zebra",
-  "lion",
-  "penguin",
-  "rabbit",
-  "turtle",
+  "leo",
+  "monkey",
+  "redpanda",
+  "sloth",
+  "squirrel",
 ];
 
-const IMAGE_PATH = "temp-images";
+const IMAGE_PATH = "assets/animals";
 const FLIP_BACK_DELAY_MS = 600;
 const CORRECT_DELAY_MS = 1000;
 const STORAGE_KEY = "memoryBest";
+const PLAYER_KEY = "memoryPlayerName";
 
 const gameState = {
   cards: [],
@@ -31,11 +32,12 @@ const bestRecords = {
   time: null,
 };
 
+let playerName = "";
+
 const board = document.getElementById("board");
-const successBlock = document.getElementById("success");
-const restartButton = document.getElementById("restart-button");
 const movesEl = document.getElementById("moves");
 const timeEl = document.getElementById("time");
+
 const bestMovesEl = document.getElementById("best-moves");
 const bestTimeEl = document.getElementById("best-time");
 
