@@ -41,6 +41,11 @@ const timeEl = document.getElementById("time");
 const bestMovesEl = document.getElementById("best-moves");
 const bestTimeEl = document.getElementById("best-time");
 
+// modal variable
+const welcomeModal = document.getElementById("welcome-modal");
+
+const closeWelcomeButton = document.getElementById("close-welcome-btn");
+
 // ## Game setup
 
 function startGame() {
@@ -144,9 +149,39 @@ function finishGame() {
 }
 
 function init() {
+  // show this modal when the window loads for the first time
+  showWelcomeModal();
+  closeWelcomeButton.addEventListener('click', closeWelcomeModal);
   // Load saved records.
   // Register event listeners.
   // Start the game.
 }
 
 init();
+
+// Build loadPlayerName(), savePlayerName(name), showWelcomeModal(), closeWelcomeModal(), handleWelcomeSubmit(event)
+
+// loadPlayerName();
+
+// savePlayerName(name);
+
+function showWelcomeModal() {
+  // show welcome
+  // grab the modal by id
+  // change the visibility to visible
+  console.log(welcomeModal.classList);
+  welcomeModal.classList.add("open-modal");
+}
+
+function closeWelcomeModal() {
+  // change the welcome modal visibility to hidden
+  welcomeModal.classList.remove("open-modal");
+};
+
+// showStatsModal();
+
+// closeStatsModal();
+
+// handleWelcomeSubmit(event) {
+
+// };
