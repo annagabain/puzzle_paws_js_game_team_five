@@ -45,7 +45,6 @@ const bestTimeEl = document.getElementById("best-time");
 const welcomeModal = document.getElementById("welcome-modal");
 
 const closeWelcomeButton = document.getElementById("close-welcome-btn");
-const welcomeModelDiv = document.getElementById("welcome-modal");
 
 // ## Game setup
 
@@ -152,7 +151,9 @@ function finishGame() {
 function init() {
   // show this modal when the window loads for the first time
   showWelcomeModal();
-  welcomeModelDiv.addEventListener('click', closeWelcomeModal);
+  welcomeModal.addEventListener('click', closeWelcomeModal);
+  document.addEventListener('keydown', closeWelcomeModal);
+
 
 
   // Load saved records.
@@ -177,8 +178,8 @@ function showWelcomeModal() {
 
 function closeWelcomeModal(event) {
   // change the welcome modal visibility to hidden
-
-  if (event.target === welcomeModelDiv || event.target === closeWelcomeButton) {
+  console.log(event.key);
+  if (event.target === welcomeModal || event.target === closeWelcomeButton || event.key === 'Escape') {
     welcomeModal.classList.remove("open-modal");
   }
 
